@@ -1,0 +1,44 @@
+[
+  {
+    "id": "monitor-unicorn",
+    "name": "Monitor Unicorn",
+    "model": "/assets3d/monitor_unicorn.glb",
+    "description": "",
+    "url": ""
+  },
+  {
+    "id": "ratz-book",
+    "name": "Ratz Book",
+    "model": "/assets3d/ratz_book.glb",
+    "description": "",
+    "url": ""
+  },
+  {
+    "id": "ryder",
+    "name": "Ryder",
+    "model": "/assets3d/ryder.glb",
+    "description": "",
+    "url": ""
+  },
+  {
+    "id": "tshirt",
+    "name": "T-Shirt",
+    "model": "/assets3d/tshirt.glb",
+    "description": "",
+    "url": ""
+  },
+  {
+    "id": "globe",
+    "name": "Globe",
+    "model": "/assets3d/GLOBE.glb",
+    "description": "",
+    "url": ""
+  },
+  {
+    "id": "mp5",
+    "name": "MP5",
+    "model": "/assets3d/MP5.glb",
+    "description": "",
+    "url": ""
+  }
+]

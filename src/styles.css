@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 2rem 2rem;
+}
+
+.app__title {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  color: #00ff00;
+  pointer-events: none;
+  z-index: 10;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 12rem));
+  gap: 1.25rem;
+  width: min(100%, 42rem);
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+}
+
+.project-card {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  padding: 0;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transform-origin: center;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  border-color: #fff;
+  transform: scale(1.25);
+  z-index: 5;
+  outline: none;
+}
+
+.project-card__thumb {
+  position: absolute;
+  inset: 0;
+}
+
+.project-card__body {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+  opacity: 0;
+}
+
+.project-card:hover .project-card__body,
+.project-card:focus-visible .project-card__body {
+  opacity: 1;
+}
+
+.project-card__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  color: #00ff00;
+}
+
+@media (hover: none) {
+  .project-card:hover {
+    border-color: #333;
+    transform: none;
+    z-index: auto;
+  }
+
+  .project-card:hover .project-card__body {
+    opacity: 0;
+  }
+
+  .project-card:active {
+    border-color: #fff;
+    transform: scale(1.1);
+    z-index: 5;
+  }
+
+  .project-card:active .project-card__body {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+  }
+
+  .app {
+    height: auto;
+    min-height: 100vh;
+    padding: 4.5rem 1rem 1.5rem;
+  }
+
+  .app__title {
+    top: 1.25rem;
+    font-size: 1.1rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .project-card:hover,
+  .project-card:focus-visible,
+  .project-card:active {
+    transform: scale(1.1);
+  }
+}
+
+.project-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.project-page__back {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 0.25rem;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.project-page__back:hover,
+.project-page__back:focus-visible {
+  border-color: #fff;
+  outline: none;
+}
+
+.project-page__model {
+  width: 60vw;
+  height: 100vh;
+}
+
+.project-page__info {
+  flex: 1;
+  text-align: left;
+  padding: 2rem 3rem;
+}
+
+.project-page__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  color: #00ff00;
+  margin: 0 0 0.5rem;
+}
+
+.project-page__description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #999;
+  margin: 0 0 1rem;
+}
+
+.project-page__link {
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.project-page__link:hover,
+.project-page__link:focus-visible {
+  border-color: #fff;
+  outline: none;
+}
+
+.project-page__missing {
+  color: #999;
+}
+
+@media (max-width: 760px) {
+  html, body, #root {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+  }
+
+  .project-page {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .project-page__back {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .project-page__model {
+    width: 100%;
+    height: 55vh;
+  }
+
+  .project-page__info {
+    flex: none;
+    padding: 1.5rem;
+    text-align: center;
+  }
+}
