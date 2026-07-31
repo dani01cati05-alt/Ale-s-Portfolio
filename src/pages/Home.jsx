@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard.jsx";
+import StarField from "../components/StarField.jsx";
 import projects from "../data/projects.json";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <div className="app">
       <h1 className="app__title">SELECT PROJECT</h1>
+      <StarField />
       <div className="grid">
         {projects.map((project) => (
           <ProjectCard

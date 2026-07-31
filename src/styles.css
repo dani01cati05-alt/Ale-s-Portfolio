@@ -48,8 +48,18 @@ body {
   margin: auto;
 }
 
+.shooting-star {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform;
+}
+
 .project-card {
   position: relative;
+  z-index: 2;
   aspect-ratio: 1;
   overflow: hidden;
   padding: 0;
